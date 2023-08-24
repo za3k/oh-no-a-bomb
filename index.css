@@ -1,0 +1,163 @@
+/* General layout */
+
+.hidden {
+    visibility: hidden;
+}
+
+.horiz {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.horiz-stretch {
+    display: flex;
+}
+.horiz-stretch > * {
+    flex: 1 1 auto;
+}
+
+/* Knobs */
+.p1 text {
+    user-select: none;
+}
+.p1 circle {
+    filter: url(#dropshadow);
+}
+
+/*  Specific Layout of the bomb */
+
+.package {
+    background-image: url("box.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 48rem;
+    height: 60rem;
+    text-align: center;
+    line-height: 100%;
+    font-size: 4rem;
+}
+
+body > *:not(.before-game) {
+    display: none;
+}
+.reveal {
+    font-size: 2rem;
+    text-align: center;
+    animation: shake 0.5s infinite;
+    /*animation: blink 0.8s ease infinite alternate;*/
+}
+
+.bomb-outer {
+    background-image: url("bomb.png");
+    background-size: 48rem;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width: 48rem;
+    height: 60rem;
+    position:relative;
+}
+
+.bomb {
+    position: absolute;
+    top: 16rem;
+    left: 14rem;
+    width: 20rem;
+    height: 40rem;
+
+    border: 3px solid black;
+    background-color: rgba(128,128,128,0.9);
+}
+
+.ticktock {
+    position: absolute;
+    left: 7.5rem;
+    top: 0.5rem;
+    font-size: 1rem;
+}
+
+.countdown-container {
+    position: absolute;
+    top: calc(50% - 2rem);
+    width: 100%;
+    background: black;
+}
+.countdown {
+    position: relative;
+    display: inline;
+    color: red;
+    font-size: 4rem;
+    font-family: seven-segment;
+    z-index: 50;
+    /*box-shadow: 0px 0px 20px 10px #f00;*/
+}
+.countdown.hours::before, .countdown.minutes::before, .countdown.seconds::before, .countdown.centiseconds::before {
+    position: absolute;
+    content: "88";
+    color: rgba(255,0,0,0.2);
+    z-index: 100;
+}
+.countdown.hours::before {
+    content: "8";
+}
+.countdown.hours::before, .countdown.minutes::before, .countdown.seconds::before {
+    bottom: -3px;
+}
+.countdown.centiseconds::before {
+    bottom: -1px;
+}
+.countdown.dot {
+    
+}
+.countdown.centiseconds {
+    font-size: 2rem;
+}
+.countdown.separator {
+    animation: blink 0.8s ease infinite alternate;
+    /*
+    How to center vertically? NO IDEA
+    display: inline;
+    line-height: 4rem;
+    vertical-align: middle;
+    */
+}
+
+.credits {
+    font-size: 8pt;
+    background-color: lightblue;
+    border: 1px solid grey;
+    padding: 10px;
+    margin-top: 40px;
+    width: fit-content;
+}
+
+@keyframes blink  {
+    0% {
+        opacity: 100%;
+    }
+    80% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+/* Taken from https://www.dayaweb.com/blog/css-text-animation-shake/ */
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@font-face {
+    font-family: seven-segment;
+    src: url("font/DSEG7-Modern/DSEG7Modern-BoldItalic.woff");
+}

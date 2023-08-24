@@ -1,0 +1,58 @@
+<html>
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="jquery-3.7.0.min.js"></script>
+</head>
+<body>
+
+
+<div class="package before-game"><span>You got a package</span></div>
+<div class="bomb-outer game">
+    <div class="reveal">OH GOD ITS A BOMB!?!?!</div>
+    <div class="bomb">
+        <div class="horiz ticktock">
+            <div class="tick">tick</div>
+            <div class="tock hidden">tock</div>
+        </div>
+
+        <!--
+        TODO: Add buttons
+        TODO: Add knobs
+        TODO: Add sliders
+        TODO: Provide output lights for feedback
+        TODO: Correct/incorrect sound
+        TODO: Halt bomb if solved
+        -->
+
+        <div class="horiz countdown-container">
+            <div>
+            <div class="countdown hours" style="display: none;">??</div>
+            <div class="countdown separator" style="display: none;">:</div>
+            <div class="countdown minutes">??</div>
+            <span class="countdown separator">:</span>
+            <div class="countdown seconds">??</div>
+            <div class="countdown dot">.</div>
+            <div class="countdown centiseconds">??</div>
+            </div>
+        </div>
+    </div>
+</div>
+<h1 class="after-game">Game Over.</h2>
+<div class="credits after-game">
+    Credits
+    <ul>
+    <li><a href="https://www.vecteezy.com/png/9394173-bomb-clipart-design-illustraiton">Bomb PNG by Timplaru Emil of Vecteezy</a>
+    <li><a href="https://www.keshikan.net/fonts-e.html">Font is DGSEG by Keshikan</a>
+    <li><a href="https://pixabay.com/">Sound effects (tick, explosion) from Pixabay</a>
+    <li><a href="https://www.dayaweb.com/blog/css-text-animation-shake/">Text shake animation</a>
+    </ul>
+</div>
+
+<div style="display:none;">
+    <audio id="tickSound" src="tick.mp3"></audio>
+    <audio id="explosionSound" src="explosion.mp3"></audio>
+</div>
+
+<script src="index.js"></script>
+
+</body></html>
