@@ -16,13 +16,134 @@
     flex: 1 1 auto;
 }
 
-/* Knobs */
-.p1 text {
-    user-select: none;
+/* Buttons that visually push down */
+.btn-push {
+  position: relative;
+  top: 0px;
+  font-family: "Open Sans";
+  text-decoration: none;
+  font-size: 1rem;
+  background: #f7f7f7;
+  padding: 15px 50px;
+  margin: 0 10px;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  box-shadow: 0px 5px 0px #c4c4c4;
+  color: #222;
+  text-shadow: 1px 1px 1px #fff;
+  transition: All 250ms ease;
+  user-select: none;
 }
-.p1 circle {
-    filter: url(#dropshadow);
+/*==========  Active State  ==========*/
+.btn-push:active {
+  position: relative;
+  top: 5px;
+  box-shadow: none !important;
+  transition: All 250ms ease;
 }
+/*==========  Navy  ==========*/
+.btn-push.navy {
+  background: #1b486d;
+  border: 1px solid #07121b;
+  box-shadow: 0px 5px 0px #07121b;
+  color: #fff;
+  text-shadow: 1px 1px 1px #07121b;
+}
+/*==========  Green  ==========*/
+.btn-push.green {
+  background: #7cc576;
+  color: #fff;
+  border: 1px solid #46963f;
+  box-shadow: 0px 5px 0px #46963f;
+  text-shadow: 1px 1px 1px #46963f;
+}
+/*==========  Red  ==========*/
+.btn-push.red {
+  background: #df4242;
+  color: #fff;
+  border: 1px solid #a01b1b;
+  box-shadow: 0px 5px 0px #a01b1b;
+  text-shadow: 1px 1px 1px #a01b1b;
+}
+/*==========  Blue  ==========*/
+.btn-push.blue {
+  background: #2ec2dd;
+  color: #fff;
+  border: 1px solid #177c8e;
+  box-shadow: 0px 5px 0px #177c8e;
+  text-shadow: 1px 1px 1px #177c8e;
+}
+/*==========  Orange  ==========*/
+.btn-push.orange {
+  background: #f57936;
+  color: #fff;
+  border: 1px solid #bc4809;
+  border-radius: 5px;
+  box-shadow: 0px 5px 0px #bc4809;
+  text-shadow: 1px 1px 1px #bc4809;
+}
+
+/* Switches */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Button that animates a push */
+
 
 /*  Specific Layout of the bomb */
 
@@ -68,11 +189,18 @@ body > *:not(.before-game) {
     background-color: rgba(128,128,128,0.9);
 }
 
+.dontexplode-button, .explode-button, .fakedontexplode-button {
+    position: absolute;
+    top: 4rem;
+    left: 2rem;
+}
+
 .ticktock {
     position: absolute;
     left: 7.5rem;
     top: 0.5rem;
     font-size: 1rem;
+    user-select: none;
 }
 
 .countdown-container {

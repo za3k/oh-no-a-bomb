@@ -2,6 +2,11 @@
 <head>
     <link rel="stylesheet" href="index.css">
     <script src="jquery-3.7.0.min.js"></script>
+
+    <audio id="tickSound" src="tick.mp3"></audio>
+    <audio id="explosionSound" src="explosion.mp3"></audio>
+    <audio id="wrongSound" src="wrong.mp3"></audio>
+    <audio id="correctSound" src="correct.mp3"></audio>
 </head>
 <body>
 
@@ -16,13 +21,28 @@
         </div>
 
         <!--
-        TODO: Add buttons
-        TODO: Add knobs
-        TODO: Add sliders
+        TODO: Add sliders level
+        TODO: Switches and buttons level
+        TODO: Password level
+        TODO: Game end
+
+        1. Puzzle
+            -> If press "Dont Explode", goes faster
+            -> If press "Explode", explode
+            -> If solve puzzle, "Dont Explode" changes color to OK
+
         TODO: Provide output lights for feedback
-        TODO: Correct/incorrect sound
         TODO: Halt bomb if solved
         -->
+
+        <div class="dontexplode-button"><a class="btn-push green" href="#" data-function="dontExplode">Don't Explode</a></div>
+        <div class="fakedontexplode-button" style="display: none;"><a class="btn-push red" href="#" data-function="fakeDontExplode">Oh No Don't Explode</a></div>
+        <div class="explode-button" style="display:none;"><a class="btn-push red" href="#" data-function="explode">Explode</a></div>
+
+        <label class="switch level1">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
 
         <div class="horiz countdown-container">
             <div>
@@ -45,12 +65,8 @@
     <li><a href="https://www.keshikan.net/fonts-e.html">Font is DGSEG by Keshikan</a>
     <li><a href="https://pixabay.com/">Sound effects (tick, explosion) from Pixabay</a>
     <li><a href="https://www.dayaweb.com/blog/css-text-animation-shake/">Text shake animation</a>
+    <li><a href="https://www.youtube.com/watch?v=FRpq7o1mKXY&ab_channel=GamingSoundFX">Gaming Sound FX for wrong buzzer</a>
     </ul>
-</div>
-
-<div style="display:none;">
-    <audio id="tickSound" src="tick.mp3"></audio>
-    <audio id="explosionSound" src="explosion.mp3"></audio>
 </div>
 
 <script src="index.js"></script>
