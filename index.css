@@ -148,7 +148,7 @@ input:checked + .slider:before {
 /*  Specific Layout of the bomb */
 
 .package {
-    background-image: url("box.svg");
+    background-image: url("img/box.svg");
     background-size: contain;
     background-repeat: no-repeat;
     width: 48rem;
@@ -169,7 +169,7 @@ body > *:not(.before-game) {
 }
 
 .bomb-outer {
-    background-image: url("bomb.png");
+    background-image: url("img/bomb.png");
     background-size: 48rem;
     background-repeat: no-repeat;
     background-position: bottom;
